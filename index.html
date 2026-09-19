@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('menu-ready');</script>
   <meta name="description" content="Isaac Cauã resolve problemas de tecnologia com suporte técnico, manutenção, automações, dados e desenvolvimento de sistemas.">
   <meta name="theme-color" content="#0b0b0d">
   <meta property="og:title" content="Isaac Cauã | Tecnologia que resolve">
@@ -16,14 +17,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/script.js" defer onerror="document.documentElement.classList.remove('menu-ready')"></script>
 </head>
-<body>
+<body id="inicio">
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-  <header class="site-header" id="inicio">
+  <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+      <a class="brand" href="#inicio">
         <span class="brand-mark" aria-hidden="true">{ic}</span>
         <span class="brand-copy"><strong>Isaac Cauã</strong><small>tecnologia que resolve</small></span>
       </a>
@@ -81,10 +82,15 @@
     </section>
 
     <section class="marquee" aria-label="Áreas de atuação">
-      <div class="marquee-track">
-        <span>MANUTENÇÃO</span><i>✦</i><span>SUPORTE</span><i>✦</i><span>AUTOMAÇÃO</span><i>✦</i><span>DADOS</span><i>✦</i><span>DESENVOLVIMENTO</span><i>✦</i>
-        <span aria-hidden="true">MANUTENÇÃO</span><i aria-hidden="true">✦</i><span aria-hidden="true">SUPORTE</span><i aria-hidden="true">✦</i><span aria-hidden="true">AUTOMAÇÃO</span><i aria-hidden="true">✦</i><span aria-hidden="true">DADOS</span><i aria-hidden="true">✦</i><span aria-hidden="true">DESENVOLVIMENTO</span><i aria-hidden="true">✦</i>
+      <div class="marquee-content">
+        <div class="marquee-track" id="areas-de-atuacao">
+          <span>MANUTENÇÃO<i aria-hidden="true">✦</i></span><span>SUPORTE<i aria-hidden="true">✦</i></span><span>AUTOMAÇÃO<i aria-hidden="true">✦</i></span><span>DADOS<i aria-hidden="true">✦</i></span><span>DESENVOLVIMENTO<i aria-hidden="true">✦</i></span>
+        </div>
       </div>
+      <button class="marquee-toggle" type="button" aria-label="Continuar animação" aria-controls="areas-de-atuacao" hidden>
+        <svg class="marquee-pause-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 3h3v10H4zm5 0h3v10H9z"/></svg>
+        <svg class="marquee-play-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m5 3 8 5-8 5z"/></svg>
+      </button>
     </section>
 
     <section class="section" id="solucoes">
@@ -334,7 +340,7 @@
             <textarea id="detalhes" name="detalhes" rows="5" placeholder="Pode explicar do seu jeito. Ex.: faço um relatório todo mês na mão e queria automatizar..." required></textarea>
           </div>
 
-          <button class="button button-wide" type="submit">Montar mensagem no WhatsApp ↗</button>
+          <button class="button button-wide" type="submit" disabled>Montar mensagem no WhatsApp ↗</button>
           <p class="form-note">Nenhuma informação é enviada até você confirmar no WhatsApp.</p>
         </form>
       </div>
