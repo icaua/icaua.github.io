@@ -53,6 +53,18 @@ const updateHeader = () => {
 window.addEventListener('scroll', updateHeader, { passive: true });
 updateHeader();
 
+const serviceField = form?.querySelector('#servico');
+if (serviceField) {
+  document.querySelectorAll('a[data-servico]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const service = link.dataset.servico;
+      if ([...serviceField.options].some((option) => option.value === service)) {
+        serviceField.value = service;
+      }
+    });
+  });
+}
+
 form?.addEventListener('submit', (event) => {
   event.preventDefault();
 
